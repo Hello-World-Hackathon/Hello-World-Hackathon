@@ -1,0 +1,12 @@
+Task:
+Make a Blog and host it on any platform of your choice. (could be on Github Pages)
+It can include, both in theme and in content, the importance of women and girls in STEM, the current situation, and steps that can improve this especially awareness in rural areas or any other aspects relevant to the theme of the Hackathon.
+Additionally, it can incorporate feedback mechanisms or ways for reader contribution
+The blog can be dynamic enough to include structured content covering this from various angles
+
+1) Thumbs up and down system (css for color change, store cariable using javascript)
+2) comment section (php stuff)
+3) for now single blog
+4) Website design (account, home, blog)
+
+Let’s divide our website into 3 parts- one where we have expert pieces by our columnists (a.I.a the blogs I’ll write), one where we allow women working in STEM to share opportunities/ cases of discrimination etc. and an area open to blogs by the general public.

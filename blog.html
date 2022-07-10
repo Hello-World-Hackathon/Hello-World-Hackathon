@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <script type="module"src="app.js"></script>
+    <link rel="script" href="app.js">
+
+    <title>Blog</title>
+</head>
+<body style = "background-color: teal;">
+    <div class="container">
+        <div class="navbar">
+            <img class="blog" src="images/blog.png" alt="">
+            <img  class = "StigmaImg" src="images/stigma.png" alt="">
+            
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="account.html">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="flex">
+            <div class="m">
+                <input type="checkbox" id="check1">
+                <h1> Women In Science </h1>
+                    As the human race evolves in technology, its heartening to see that we finally evolved 
+                    with our mentality as well! The mentality of looking at women as inferior should no longer 
+                    be in our hearts, as they are as good as men in every field they step into.
+                    <br>
+                    <div class="con1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia asperiores expedita autem tempora impedit inventore itaque est eius numquam laborum!</div>
+                <label for="check1">Read More</label>
+            </div>
+            <div class="n">
+                <input type="checkbox" id="check2">
+                <h1> Women In Science </h1>
+                43% of STEM graduates in India are women, the highest in the world; yet their share in STEM jobs is just 19%. There are various reasons for this, including lack of role models, pressures to conform to societal norms and trappings of domesticity, stressors related to marriage, childbirth etc., sexual harrasmant and discrimination at work etc. 
+                 
+                
+                    <br>
+                    <div class="con2">This is terrible news, considering how much women really bring to the table in STEM fields. 
+                        For one, a more representative workforce leads to more exhaustive questions being asked, and problems being targeted from a variety of angles.
+                        Especially in engineering, a lot of equipment and technologies are designed for men due to the lack of female engineers. For example, when the seatbelt was first introduced, it was modeled to fit the male body, which led to the loss of lives of many women as their body type wasn’t considered. Similarly, scientists determined the average office temperature in the 1960s. They based it on the metabolic resting rate of an average male. Yet, in recent years, scientists found out that female metabolic rate isn’t the same. In actuality, it’s about 30% higher than that of males.
+                        Besides that, there is a surplus of jobs in STEM, and the fact that a large portion of the population is completely cut off from STEM and the wonderful opportunities it provides is a bane to the global economy. With most of the highest paying jobs being STEM jobs, women’s lack of participation also widens the wage gap. 
+                        We desperately need more women in STEM, through tackling the many reasons, from a lack of opportunities, to societal pressure on women to not enter STEM.</div>
+                <label for="check2">Read More</label>
+            </div>
+            <div class="o">
+                <input type="checkbox" id="check3">
+                <h1> Women In Science </h1>
+                    As the human race evolves in technology, its heartening to see that we finally evolved 
+                    with our mentality as well! The mentality of looking at women as inferior should no longer 
+                    be in our hearts, as they are as good as men in every field they step into.
+                    <br>
+                <div class="con3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi hic amet saepe ratione eos dignissimos! Quasi nisi maxime provident libero?</div>
+               <label for="check3">Read More</label>
+            </div>
+            <br><br>
+        </div>
+        <form id="write" action="#">
+            <input type="text" placeholder="Username" id="post1"><br><br>
+            <input type="text" placeholder="Title" id="post2"><br><br>
+            <textarea style="resize: none;" class ="blog" name="Text1" cols="40" rows="5" id="post3" placeholder="Write the Blog here...."></textarea><br><br>
+            <button class="submit" id="submitBtn" type="submit" onclick="sendMessage()">Submit</button>
+            <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase.js"></script>
+            <script type="module">
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+                import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
+                const firebaseConfig = {
+                    apiKey: "AIzaSyDrE8DNhnA0OjXyM06RAMGWjqWyl2N7V4k",
+                    authDomain: "stigma-a7f6b.firebaseapp.com",
+                    projectId: "stigma-a7f6b",
+                    storageBucket: "stigma-a7f6b.appspot.com",
+                    messagingSenderId: "1027338510182",
+                    appId: "1:1027338510182:web:203abadd03e883ba3eb2a7",
+                    measurementId: "G-RCFBQC34CZ"
+                    };
+
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                const analytics = getAnalytics(app);
+
+                var database = firebase.database();
+                function sendBlog() {
+                    var user = document.getElementById('post1').value;
+                    var tle = document.getElementById('post2').value;
+                    var bl = document.getElementById('post3').value;
+
+                    console.log(user, tle, bl);
+
+                    var newBlogKey = database.ref().child('blogs').push().key;
+
+                    database.ref('blogs/'+newBlogKey+'/user').set(user);
+                    database.ref('blogs/'+newBlogKey+'/tle').set(tle);
+                    database.ref('blogs/'+newBlogKey+'/bl').set(bl);
+                }
+
+                document.getElementById('write').addEventListener('submitBtn',submitForm)
+                function submitForm(e) {
+                    e.preventDefault();
+                }
+            </script>
+        </form>
+    </div>
+    <p class="inside" id="inside"> 
+      <script src="app.js"></script>
+</body>
+</html>
+

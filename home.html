@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Stigma</title>
+</head>
+<body style = "background:teal">
+
+    <div class="container">
+        <div class="navbar">
+            <img class="stem"src="images/stem.png" alt="stem image">
+            <img  class = "StigmaImg" src="images/stigma.png" alt="">
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="account.html">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="carousel" data-flickity='{"wrapAround": true, "autoPlay": true}'>
+            <div class="carousel-cell"><img src="images/1.jpg" alt="1"></div>
+            <div class="carousel-cell"><img src="images/2.jpg" alt="2"></div>
+            <div class="carousel-cell"><img src="images/3.jpg" alt="3"></div>
+            <div class="carousel-cell"><img src="images/4.jpg" alt="4"></div>
+          </div> 
+          <br><br><br>
+          <hr color="black" size="5">
+    <div class="section">
+        <div class="container2">
+            <div class="contentSection">
+                <div class="title">
+                    <h1>ABOUT US</h1>
+                    <br>
+                </div>
+                <div class="content">
+                    <h3>Meet the Creators: team  Hello World!</h3>
+                    <br>
+                    <p>We have Prakrit, Vidush, Rudransh, Aarav and Nimay. an enthusiastic team who used each and everyones' ex</p>
+                </div>
+            </div>
+            <div class="imageSection">
+                <img src="https://media.istockphoto.com/photos/multi-ethnic-guys-and-girls-taking-selfie-outdoors-with-backlight-picture-id1368965646?b=1&k=20&m=1368965646&s=170667a&w=0&h=9DO-7OKgwO8q7pzwNIb3aq2urlw3DNTmpKQyvvNDWgY=" alt="Hamari picture" class="">
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDrE8DNhnA0OjXyM06RAMGWjqWyl2N7V4k",
+          authDomain: "stigma-a7f6b.firebaseapp.com",
+          projectId: "stigma-a7f6b",
+          storageBucket: "stigma-a7f6b.appspot.com",
+          messagingSenderId: "1027338510182",
+          appId: "1:1027338510182:web:203abadd03e883ba3eb2a7",
+          measurementId: "G-RCFBQC34CZ"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+</body>
+</html>

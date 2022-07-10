@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <title>Profile
+    </title>
+</head>
+<body style="background-color: teal;">
+    <div class="container">
+        <div class="navbar">
+            <img class="stem" src="images/stem.png" alt="stem image">
+            <img  class = "StigmaImg" src="images/stigma.png" alt="">
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="account.html">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    <div class="profile-container">
+        <div class="profile-box">
+            <img src="account/setting.png" class="setting-icon" id="settingsBtn" value="Show Div" onclick="showDiv()">
+            <div class="settings">
+                <ul id="dropdown" class="dropdown">
+                    <li class="changePassword">change password</li>
+                    <li class="logOut">log out</li>
+                </ul>
+            <img src="account/profile.png" class="profile-icon">
+            <h3> User Name </h3> <br>
+            <input type="text" placeholder="Add Your Bio" class="bio-input">  </input>
+            <div class="profile-bottom">
+                <p>Check out blogs</p>
+                <img src="account/arrow.png" >
+            </div>
+            <button id="followBtn" type="button" class="follow-button" onclick="incrementValue()" value="Increase"> Follow </button>
+            <h1 class="followersCount">Followers:</h1><input type="text" id="number" value="0" class="followers" readonly> 
+            
+            <script>
+                const followBtn = document.getElementById("followBtn");
+                followBtn.addEventListener("click", function(e){
+                    console.log("Following.....");
+                    followBtn.style.display = 'none';
+
+                });
+                function incrementValue()
+                    {
+                        var value = parseInt(document.getElementById('number').value, 10);
+                        value = isNaN(value) ? 0 : value;
+                        value++;
+                        document.getElementById('number').value = value;
+                        followBtn.style.display = 'none';
+                    }
+
+            </script>
+""                <script>
+                    function showDiv(){
+                        var dropdown = document.getElementById('dropdown');
+                        if (dropdown.style.display ==="none") {
+                            dropdown.style.display = "block";
+                        } else{
+                            dropdown.style.display = "none";
+                        }
+                    }
+                     
+                </script>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDrE8DNhnA0OjXyM06RAMGWjqWyl2N7V4k",
+          authDomain: "stigma-a7f6b.firebaseapp.com",
+          projectId: "stigma-a7f6b",
+          storageBucket: "stigma-a7f6b.appspot.com",
+          messagingSenderId: "1027338510182",
+          appId: "1:1027338510182:web:203abadd03e883ba3eb2a7",
+          measurementId: "G-RCFBQC34CZ"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+</body>
+</html>
