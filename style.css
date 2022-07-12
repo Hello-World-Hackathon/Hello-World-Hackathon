@@ -13,9 +13,6 @@
     padding-right: 8%; */
     box-sizing: border-box;
     overflow: hidden;
-    background-image: url("account images/background.png");
-    background-size: cover;
-    background-position: center;
 }
 
 .navbar{
@@ -385,7 +382,7 @@ label {
 
 .section{
     width: 100%;
-    min-height: 100vh;
+    min-height: 25vh;
 }
 .container2{
     width: 30%;
@@ -395,11 +392,14 @@ label {
     padding-right: 50%;
     font-size: x-large;
     
+    
 
     
 }
-.container2 h1{
+
+.container2 h1 {
     font-size: 50px;
+    
 
 }
 .imageSection{
@@ -410,12 +410,19 @@ label {
     height: 100%;
 
 }
+.contentSection{
+    background-color: white;
+    padding: 4%;
+    border-radius: 1rem
+}
 .imageSection img{
     border-radius: 50%;
     border: 10px solid white;
     position: relative;
-    margin-right: -200px;
-    margin-left:180%;
+
+    margin-left:150%;
+    margin-top: -8rem;
+    height: 24rem;
 }
 
 .logo {
@@ -456,12 +463,3 @@ label {
     }
   }
   
-.inside {
-    width:30%;
-    margin-left: 35%;
-    margin-right: 35%;
-    background-color: aquamarine;
-    border-radius: 1rem;
-    height:200px;
-    margin-bottom: 1%;
-}

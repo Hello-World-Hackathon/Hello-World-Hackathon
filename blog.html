@@ -28,12 +28,11 @@
         <div class="flex">
             <div class="m">
                 <input type="checkbox" id="check1">
-                <h1> Women In Science </h1>
-                    As the human race evolves in technology, its heartening to see that we finally evolved 
-                    with our mentality as well! The mentality of looking at women as inferior should no longer 
-                    be in our hearts, as they are as good as men in every field they step into.
+                <h1> Women in science in india </h1>
+                Women in science are gladiators. In one sense, they are always in combat, tackling challenges on multiple fronts — caste, religion, gender, equality and funding. Anna Mani, Annapurni Subramaniam, Raman Parimala, Rathnashree, Rohini Godbole, Dr V Shanta, Soumya Swaminathan, Sujata Ramdorai — the list of successful Indian women in science goes on on. Unfortunately, women in science were not encouraged for decades.
+                
                     <br>
-                    <div class="con1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia asperiores expedita autem tempora impedit inventore itaque est eius numquam laborum!</div>
+                    <div class="con1"> Anna Mani, a student of Prof C V Raman, was refused a PhD at the Indian Institute of Science (IISc), although her dissertation involved ample research work. Unfazed, Mani specialised in meteorological instruments at Imperial College London.After returning to India, she joined the Indian Meteorology Department (IMD). Her contributions have led her to be called the Weather Woman of India.  “The good part is that women become role models very easily. Especially for their kids,  the gender bias is broken down quite early. This is why women in science are important” says Dr Vinita Gowda, Associate Professor, IISER Bhopal. </div>
                 <label for="check1">Read More</label>
             </div>
             <div class="n">
@@ -52,59 +51,23 @@
             </div>
             <div class="o">
                 <input type="checkbox" id="check3">
-                <h1> Women In Science </h1>
-                    As the human race evolves in technology, its heartening to see that we finally evolved 
-                    with our mentality as well! The mentality of looking at women as inferior should no longer 
-                    be in our hearts, as they are as good as men in every field they step into.
+                <h1> Ms. Manpreet Kalra </h1>
+                I, Manpreet Kalra, a woman who works in a STEAM-related area, would want to start by saying how fortunate I am to have the opportunity to think about and share my thoughts on women in STEAM.
+                In order to encourage females to pursue STEAM careers, adolescent girls should be taught and made aware of the STEAM professions through skill-based training, mentorships, and educational resources. 
                     <br>
-                <div class="con3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi hic amet saepe ratione eos dignissimos! Quasi nisi maxime provident libero?</div>
+                <div class="con3">We must inspire the next generation of thinkers to pursue careers in STEAM and        computing.
+                    STEAM graduates have the opportunity to pursue a number of vocations, including management and leadership roles, due to their unique capacity to conceptualise, analyse, synthesise, interpret, and deduce answers to practical challenges. Their rigorous, systematic, and logical approach to issue resolution is primarily responsible for their success.
+                    In addition, we have the power to imagine a better world. In the most cutting-edge fields like robotics, engineering, medicine, and computer technology, you may contribute to the development of a healthier and more sustainable society by using the creativity to find creative solutions to difficult problems.
+                    Additionally, there are countless job prospects in engineering, technology, and mathematics. Only around 20% (about) of professionals in this industry are women, which further compounds this shortage. The world thus requires the strength of women. Despite the fact that women have made great progress in the STEAM disciplines, I believe that more must be done to reduce the gender gap in these fields and increase awareness of the importance of STEAM education for women.</div>
                <label for="check3">Read More</label>
             </div>
             <br><br>
         </div>
-        <form id="write" action="#">
-            <input type="text" placeholder="Username" id="post1"><br><br>
-            <input type="text" placeholder="Title" id="post2"><br><br>
-            <textarea style="resize: none;" class ="blog" name="Text1" cols="40" rows="5" id="post3" placeholder="Write the Blog here...."></textarea><br><br>
-            <button class="submit" id="submitBtn" type="submit" onclick="sendMessage()">Submit</button>
-            <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase.js"></script>
-            <script type="module">
-                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
-                import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
-                const firebaseConfig = {
-                    apiKey: "AIzaSyDrE8DNhnA0OjXyM06RAMGWjqWyl2N7V4k",
-                    authDomain: "stigma-a7f6b.firebaseapp.com",
-                    projectId: "stigma-a7f6b",
-                    storageBucket: "stigma-a7f6b.appspot.com",
-                    messagingSenderId: "1027338510182",
-                    appId: "1:1027338510182:web:203abadd03e883ba3eb2a7",
-                    measurementId: "G-RCFBQC34CZ"
-                    };
-
-                // Initialize Firebase
-                const app = initializeApp(firebaseConfig);
-                const analytics = getAnalytics(app);
-
-                var database = firebase.database();
-                function sendBlog() {
-                    var user = document.getElementById('post1').value;
-                    var tle = document.getElementById('post2').value;
-                    var bl = document.getElementById('post3').value;
-
-                    console.log(user, tle, bl);
-
-                    var newBlogKey = database.ref().child('blogs').push().key;
-
-                    database.ref('blogs/'+newBlogKey+'/user').set(user);
-                    database.ref('blogs/'+newBlogKey+'/tle').set(tle);
-                    database.ref('blogs/'+newBlogKey+'/bl').set(bl);
-                }
-
-                document.getElementById('write').addEventListener('submitBtn',submitForm)
-                function submitForm(e) {
-                    e.preventDefault();
-                }
-            </script>
+        <form id="write" action="stigma.php" method="post">
+            <input type="text" placeholder="Username" id="post1" name="user"><br><br>
+            <input type="text" placeholder="Title" id="post2" name="tle"><br><br>
+            <textarea style="resize: none;" class ="blog" name="bl" cols="40" rows="5" id="post3" placeholder="Write the Blog here...."></textarea><br><br>
+            <button class="submit" id="submitBtn" type="submit">Submit</button>
         </form>
     </div>
     <p class="inside" id="inside"> 
